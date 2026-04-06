@@ -39,11 +39,11 @@ services:
       # The UV_LINK_MODE warning happens during build, so we can set it there if needed,
       # but it's generally harmless.
 
-    command: ["pdf2zh", "-i"]
+    command: ["pdf2zh", "-i", "--authorized", "/data/users.txt"]
 
     # Optional: Mount a volume for persistent data I/O if needed
-    # volumes:
-    #   - ./data:/app/data
+    volumes:
+      - ./data:/data
 
     stdin_open: true
     tty: true
